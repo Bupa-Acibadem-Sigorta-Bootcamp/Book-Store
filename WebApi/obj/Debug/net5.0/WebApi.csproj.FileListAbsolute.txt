@@ -27,3 +27,8 @@ C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\ref\WebApi.dll
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.pdb
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
