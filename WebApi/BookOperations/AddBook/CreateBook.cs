@@ -6,7 +6,6 @@ namespace WebApi.BookOperations.CreateBook
 {
     public class CreateBook
     {
-
         private const string Error = "Kitap Mevcut";
         private const string Value = "Kaydedildi";
         public CreateBookModel Model { get; set; }
@@ -15,7 +14,6 @@ namespace WebApi.BookOperations.CreateBook
         {
             _context = context;
         }
-
         public void Handle()
         {
             var book = _context.Books.SingleOrDefault(b => b.Title == Model.Title);
@@ -32,11 +30,7 @@ namespace WebApi.BookOperations.CreateBook
             throw new InvalidOperationException(Value);
         }
 
-
     }
-
-
-
     public class CreateBookModel
     {
         public string Title { get; set; }
