@@ -32,3 +32,5 @@ C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\AutoMapper.dll
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

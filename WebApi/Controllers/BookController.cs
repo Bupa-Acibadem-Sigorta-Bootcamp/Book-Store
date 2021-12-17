@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.DeleteBook;
@@ -17,46 +18,40 @@ namespace WebApi.Controllers
         private const string Error = "Hatalı";
         private const string Value = "Kaydedildi";
         private readonly BookDbContext _context;
-
-        public BookController(BookDbContext context)
+        private readonly IMapper _mapper;
+        public BookController(BookDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
-
         [HttpGet]
         public IActionResult GetBooks()
         {
-            GetBooksQuery query = new GetBooksQuery(_context);
+            GetBooksQuery query = new GetBooksQuery(_context, _mapper);
             var result = query.Handle();
             return Ok(result);
         }
-
-
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             BooksDetailViewModel result;
             try
             {
-                GetBookDetailQuery getBookDetail = new GetBookDetailQuery(_context);
+                GetBookDetailQuery getBookDetail = new GetBookDetailQuery(_context, _mapper);
                 getBookDetail.BookId = id;
                 result = getBookDetail.Handle();
             }
             catch (Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
-
-
             return Ok(result);
         }
 
         [HttpPost]
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-
-            CreateBook create = new CreateBook(_context);
+            CreateBook create = new CreateBook(_context, _mapper);
             try
             {
                 create.Model = newBook;
@@ -67,11 +62,9 @@ namespace WebApi.Controllers
 
                 return BadRequest(ex.Message);
             }
-
             return Ok(Value);
             //Ok Value vermesem de yine mesaj dönüyor çünkü CreateBookda mesaj verdim. Burda da çalışır değiştirisek
         }
-
         [HttpPut("{id}")]
         public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
@@ -84,14 +77,11 @@ namespace WebApi.Controllers
             }
             catch (System.Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
-
             _context.SaveChanges();
             return Ok();
         }
-
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
@@ -103,7 +93,6 @@ namespace WebApi.Controllers
             }
             catch (System.Exception ex)
             {
-
                 return BadRequest(ex.Message);
             }
             return Ok("silindi");

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using AutoMapper;
 using WebApi.DataBaseOpeOperations;
 
 namespace WebApi.BookOperations.CreateBook
@@ -10,22 +11,27 @@ namespace WebApi.BookOperations.CreateBook
         private const string Value = "Kaydedildi";
         public CreateBookModel Model { get; set; }
         private readonly BookDbContext _context;
-        public CreateBook(BookDbContext context)
+        private readonly IMapper _mapper;
+        public CreateBook(BookDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
+
         public void Handle()
         {
             var book = _context.Books.SingleOrDefault(b => b.Title == Model.Title);
             if (book is not null)
                 throw new InvalidOperationException(Error);
-            book = new Book();
-            book.Title = Model.Title;
-            book.PageCount = Model.PageCount;
-            book.GenreId = Model.GenreId;
-            book.PublishDate = Model.PaublishDate;
+            book = _mapper.Map<Book>(Model); //new Book();
+            /* 
+            Mapping Kullanıldı İhtiyaç Kalmadı             
+             book.Title = Model.Title;
+             book.PageCount = Model.PageCount;
+             book.GenreId = Model.GenreId;
+             book.PublishDate = Model.PaublishDate;             
+             */
             _context.Books.Add(book);
-
             _context.SaveChanges();
             throw new InvalidOperationException(Value);
         }
