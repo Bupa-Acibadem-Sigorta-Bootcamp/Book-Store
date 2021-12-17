@@ -1,0 +1,4 @@
+namespace WebApi.BookOperations.CreatBookCommandValidator
+{
+    
+}
