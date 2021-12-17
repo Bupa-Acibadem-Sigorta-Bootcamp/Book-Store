@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.BookOperations.CreateBook;
+using WebApi.BookOperations.GetBooks;
 using WebApi.DataBaseOpeOperations;
 
 namespace WebApi.Controllers
@@ -19,38 +21,12 @@ namespace WebApi.Controllers
             _context = context;
         }
 
-        // private static List<Book> BookList = new List<Book>(){
-
-        //     new Book{
-        //         Id = 1,
-        //         GenreId = 1,
-        //         Title = "Mahmure",
-        //         PageCount = 304,
-        //         PublishDate = new DateTime(2021,05,17)
-        //     },
-        //     new Book{
-        //         Id = 2,
-        //         GenreId = 2,
-        //         Title = "Beyin",
-        //         PageCount = 205,
-        //         PublishDate = new DateTime(2021,05,17)
-        //     },
-        //     new Book{
-        //         Id = 3,
-        //         GenreId = 3,
-        //         Title = "Yabani Monolyalar",
-        //         PageCount = 205,
-        //         PublishDate = new DateTime(2018,05,17)
-        //     }
-        // };
-
-        // 
-
         [HttpGet]
-        public List<Book> GetBooks()
+        public IActionResult GetBooks()
         {
-            var bookList = _context.Books.OrderBy(b => b.Id).ToList<Book>();
-            return bookList;
+            GetBooksQuery query = new GetBooksQuery(_context);
+            var result = query.Handle();
+            return Ok(result);
         }
 
 
@@ -62,14 +38,23 @@ namespace WebApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] Book newBook)
+        public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            var book = _context.Books.SingleOrDefault(b => b.Title == newBook.Title);
-            if (book is not null)
-                return BadRequest(Error);
-            _context.Books.Add(newBook);
-            _context.SaveChanges();
+            
+            CreateBook create = new CreateBook(_context);
+            try
+            {
+                create.Model = newBook;
+            create.Handle(); 
+            }
+            catch (Exception ex)
+            {
+                
+                return BadRequest(ex.Message);
+            }
+            
             return Ok(Value);
+            //Ok Value vermesem de yine mesaj dönüyor çünkü CreateBookda mesaj verdim. Burda da çalışır değiştirisek
         }
 
         [HttpPut("{id}")]
