@@ -1,5 +1,6 @@
 using System;
 using AutoMapper;
+using WebApi.BookOperations.AddBook;
 using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.GetBookDetailQuery;
 using WebApi.BookOperations.GetBooks;

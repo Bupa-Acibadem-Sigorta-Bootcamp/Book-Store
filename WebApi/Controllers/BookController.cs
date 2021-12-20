@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.BookOperations.AddBook;
 using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.DeleteBook;
 using WebApi.BookOperations.GetBookDetailQuery;
@@ -52,9 +54,12 @@ namespace WebApi.Controllers
         public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
             CreateBook create = new CreateBook(_context, _mapper);
+                       
             try
             {
                 create.Model = newBook;
+                CreateBookValidator valid = new CreateBookValidator(); 
+                valid.ValidateAndThrow(create);
                 create.Handle();
             }
             catch (Exception ex)
