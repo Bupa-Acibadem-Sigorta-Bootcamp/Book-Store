@@ -55,18 +55,18 @@ namespace WebApi.Controllers
         {
             CreateBook create = new CreateBook(_context, _mapper);
                        
-            try
-            {
+            // try
+            // {
                 create.Model = newBook;
                 CreateBookValidator valid = new CreateBookValidator(); 
                 valid.ValidateAndThrow(create);
                 create.Handle();
-            }
-            catch (Exception ex)
-            {
+            // }
+            // catch (Exception ex)
+            // {
 
-                return BadRequest(ex.Message);
-            }
+            //     return BadRequest(ex.Message);
+            // }
             return Ok(Value);
             //Ok Value vermesem de yine mesaj dönüyor çünkü CreateBookda mesaj verdim. Burda da çalışır değiştirisek
         }
