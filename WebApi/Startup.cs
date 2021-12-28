@@ -37,7 +37,7 @@ namespace WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi", Version = "v1" });
             });
-            services.AddDbContext<BookDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDb"));
+            services.AddDbContext<BookStoreDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDb"));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddSingleton<ILoggerService, ConsoleLogger>();
             //TODO : Sadece burada log yerini değiştirdiğimizde sistem değişiyor Dependency İnjection yöntemi hayat kurtarır Sol(i)d yeni sistem geldiğinde mevcut yapı bozulamaz der.

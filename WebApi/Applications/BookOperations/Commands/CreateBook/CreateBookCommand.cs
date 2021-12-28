@@ -2,22 +2,21 @@ using System;
 using System.Linq;
 using AutoMapper;
 using WebApi.DataBaseOpeOperations;
+using WebApi.Entities;
 
-namespace WebApi.BookOperations.AddBook
+namespace WebApi.Applications.BookOperations.Commands.CreateBook
 {
-    public class CreateBook
+    public class CreateBookCommand
     {
-        private const string Error = "Kitap Mevcut";
-        private const string Value = "Kaydedildi";
-        public CreateBookModel Model { get; set; }
-        private readonly BookDbContext _context;
+        private const string Error = "Kitap Zaten Mevcut!";        
+        public CreateBookCommandModel Model { get; set; }
+        private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public CreateBook(BookDbContext context, IMapper mapper)
+        public CreateBookCommand(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
-
         public void Handle()
         {
             var book = _context.Books.SingleOrDefault(b => b.Title == Model.Title);
@@ -32,12 +31,10 @@ namespace WebApi.BookOperations.AddBook
              book.PublishDate = Model.PaublishDate;             
              */
             _context.Books.Add(book);
-            _context.SaveChanges();
-            throw new InvalidOperationException(Value);
+            _context.SaveChanges();            
         }
-
     }
-    public class CreateBookModel
+    public class CreateBookCommandModel
     {
         public string Title { get; set; }
         public int GenreId { get; set; }

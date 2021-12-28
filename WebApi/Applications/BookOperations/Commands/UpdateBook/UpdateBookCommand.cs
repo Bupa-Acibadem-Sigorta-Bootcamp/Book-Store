@@ -2,20 +2,18 @@ using System;
 using System.Linq;
 using WebApi.DataBaseOpeOperations;
 
-namespace WebApi.BookOperations.CreateBook
+namespace WebApi.Applications.BookOperations.Commands.CreateBookCommand
 {
     public class UpdateBookCommand
     {
         public int BookId { get; set; }
         public UpdateBookModel Model { get; set; }
-        private const string Error = "Kitap Mevcut Değil, Güncellenemedi!";
-        private const string Value = "Güncellendi";
-        private readonly BookDbContext _context;
-        public UpdateBookCommand(BookDbContext context)
+        private const string Error = "Kitap Mevcut Değil, Güncellenemedi!";      
+        private readonly BookStoreDbContext _context;
+        public UpdateBookCommand(BookStoreDbContext context)
         {
             _context = context;
         }
-
         public void Handle()
         {
             var book = _context.Books.SingleOrDefault(b => b.Id == BookId);
@@ -25,8 +23,7 @@ namespace WebApi.BookOperations.CreateBook
             book.PageCount = Model.PageCount != default ? Model.PageCount : book.PageCount;
             book.PublishDate = Model.PublishDate != default ? Model.PublishDate : book.PublishDate;
             book.Title = Model.Title != default ? Model.Title : book.Title;
-            _context.SaveChanges();
-            throw new InvalidOperationException(Value);
+            _context.SaveChanges();            
         }
     }
     public class UpdateBookModel
