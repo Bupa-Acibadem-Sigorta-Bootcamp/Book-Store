@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using WebApi.DataBaseOpeOperations;
 using WebApi.Middlewares;
+using WebApi.Services;
 
 namespace WebApi
 {
@@ -38,6 +39,10 @@ namespace WebApi
             });
             services.AddDbContext<BookDbContext>(options => options.UseInMemoryDatabase(databaseName: "BookStoreDb"));
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddSingleton<ILoggerService, ConsoleLogger>();
+            //TODO : Sadece burada log yerini değiştirdiğimizde sistem değişiyor Dependency İnjection yöntemi hayat kurtarır Sol(i)d yeni sistem geldiğinde mevcut yapı bozulamaz der.
+            //services.AddSingleton<ILoggerService, DbLogger>(); 
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
