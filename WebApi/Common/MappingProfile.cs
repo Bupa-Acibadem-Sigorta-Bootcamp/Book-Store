@@ -19,14 +19,14 @@ namespace WebApi.Common
             CreateMap<CreateBookCommandModel, Book>(); //Add metodu için source target
             CreateMap<Book, BooksDetailViewModel>()
             .ForMember(desc => desc.Genre, opt => opt
-            .MapFrom(src => ((GenreEnum)src.GenreId).ToString()));
+            .MapFrom(src => src.Genre.Name));
             CreateMap<Book, BooksViewModel>()
             .ForMember(desc => desc.Genre, opt => opt
-            .MapFrom(src => ((GenreEnum)src.GenreId).ToString()));
+            .MapFrom(src => src.Genre.Name));
 
             CreateMap<Genre, GenreQueryViewModel>();
-            CreateMap<Genre, CreateGenreViewModel>();            
-            CreateMap<Genre, GenreDetailViewModel>();            
+            CreateMap<Genre, CreateGenreViewModel>();
+            CreateMap<Genre, GenreDetailViewModel>();
         }
     }
 }

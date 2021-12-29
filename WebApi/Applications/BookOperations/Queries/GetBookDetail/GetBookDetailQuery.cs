@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using WebApi.Common;
 using WebApi.DataBaseOpeOperations;
 using WebApi.Entities;
@@ -23,7 +24,7 @@ namespace WebApi.Applications.BookOperations.Queries.GetBookDetailQuery
         }
         public BooksDetailViewModel Handle()
         {
-            var book = _context.Books.Where<Book>(b => b.Id == BookId).SingleOrDefault();
+            var book = _context.Books.Include(x => x.Genre).SingleOrDefault(b => b.Id == BookId);
             if (book is null)
                 throw new InvalidOperationException("Kitap Bulunamadı!");
             BooksDetailViewModel booksDetailView = _mapper.Map<BooksDetailViewModel>(book);

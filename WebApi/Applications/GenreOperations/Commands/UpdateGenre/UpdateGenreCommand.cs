@@ -12,7 +12,6 @@ namespace WebApi.Applications.GenreOperations.Commands.UpdateGenre
         public UpdateGenreViewModel Model { get; set; }
 
         private readonly BookStoreDbContext _context;
-        private readonly IMapper _mapper;
         public UpdateGenreCommand(BookStoreDbContext context)
         {
             _context = context;            

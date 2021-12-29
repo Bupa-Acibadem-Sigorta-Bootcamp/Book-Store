@@ -10,7 +10,6 @@ namespace WebApi.Applications.GenreOperations.Commands.DeleteGenre
     {
         public int GenreId { get; set; }
         private readonly BookStoreDbContext _context;
-        private readonly IMapper _mapper;
         public DeleteGenreCommand(BookStoreDbContext context)
         {
             _context = context;           
@@ -22,7 +21,6 @@ namespace WebApi.Applications.GenreOperations.Commands.DeleteGenre
                 throw new InvalidOperationException("Kitap Türü Bulunamadı!");
             _context.Genres.Remove(genres);           
             _context.SaveChanges();
-            
         }
     }
 }
