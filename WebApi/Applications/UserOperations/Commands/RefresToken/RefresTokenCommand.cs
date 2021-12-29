@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -8,23 +7,23 @@ using Microsoft.Extensions.Configuration;
 using WebApi.DataBaseOpeOperations;
 using WebApi.TokenOperations.Models;
 
-namespace WebApi.Applications.UserOperations.Commands.CreateToken
+namespace WebApi.Applications.UserOperations.Commands.RefresToken
 {
-    public class CreateTokenCommand
+    public class RefresTokenCommand
     {
-        public CreateTokenViewModel Model { get; set; }
+        public string RefresToken { get; set; }
         private readonly IConfiguration _configuration;
         private readonly BookStoreDbContext _context;
-        private readonly IMapper _mapper;
-        public CreateTokenCommand(BookStoreDbContext context, IMapper mapper, IConfiguration configuration)
+
+        public RefresTokenCommand(BookStoreDbContext context, IConfiguration configuration)
         {
             _context = context;
-            _mapper = mapper;
+
             _configuration = configuration;
         }
         public Token Handle()
         {
-            var user = _context.Users.FirstOrDefault(x => x.Email == Model.Email && x.Password == Model.Password);
+            var user = _context.Users.FirstOrDefault(x => x.RefresToken == RefresToken && x.RefreshTokenExpireDate > DateTime.Now);
             if (user is not null)
             {
                 TokenHandler tokenHandler = new TokenHandler(_configuration);
@@ -35,17 +34,12 @@ namespace WebApi.Applications.UserOperations.Commands.CreateToken
 
                 _context.SaveChanges();
                 return token;
-
-            }else
+            }
+            else
             {
-                throw new InvalidOperationException("Kullanıcı Adınız veya Şifreniz Hatalı!");
+                throw new InvalidOperationException("Doğrulanmış Bir Oturum Açılamadı!");
             }
         }
-    }
-    public class CreateTokenViewModel
-    {
-        public string Email { get; set; }
-        public string Password { get; set; }
     }
 }
 

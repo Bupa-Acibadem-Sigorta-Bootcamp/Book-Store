@@ -7,10 +7,11 @@ using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using WebApi.Applications.UserOperations.Commands.CreateToken;
 using WebApi.Applications.UserOperations.Commands.CreateUser;
+using WebApi.Applications.UserOperations.Commands.RefresToken;
 using WebApi.DataBaseOpeOperations;
 using WebApi.TokenOperations.Models;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
 
 namespace WebApi.Controllers
 {
@@ -27,21 +28,7 @@ namespace WebApi.Controllers
             _mapper = mapper;
             _configuration = configuration;
         }
-        // GET: api/<UserController>
-        [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET api/<UserController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<UserController>
         [HttpPost]
         public IActionResult CreateUser([FromBody] CreateUserViewModel user)
         {
@@ -59,16 +46,14 @@ namespace WebApi.Controllers
             var token = create.Handle();
             return token;
         }
-        // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
-        // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpGet("refreshToken")]
+        public ActionResult<Token> RefresToken([FromBody] string token)
         {
+            RefresTokenCommand create = new RefresTokenCommand(_context, _configuration);
+            create.RefresToken = token;
+            var resultRefresToken = create.Handle();
+            return resultRefresToken;
         }
     }
 }
