@@ -65,7 +65,7 @@ namespace WebApi.Controllers
             DeleteGenreCommand delete = new DeleteGenreCommand(_context);
             delete.GenreId = id;
             DeleteGenreCommandValidator validate = new DeleteGenreCommandValidator();
-            delete.Handle();            
+            delete.Handle();
             return Ok("Kitap Türü Silindi.");
         }
     }

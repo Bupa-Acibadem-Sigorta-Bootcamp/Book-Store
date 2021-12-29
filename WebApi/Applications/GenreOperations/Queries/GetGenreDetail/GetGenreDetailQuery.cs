@@ -23,7 +23,6 @@ namespace WebApi.Applications.GenreOperations.Queries.GetGenreDetail
             if (genres is null)
                 throw new InvalidOperationException("Kitap Türü Bulunamadı!");
             return _mapper.Map<GenreDetailViewModel>(genres);
-            throw new InvalidOperationException("Kitap Türleri Listelendi.");
         }
     }
     public class GenreDetailViewModel
