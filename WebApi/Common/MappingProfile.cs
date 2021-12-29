@@ -25,7 +25,7 @@ namespace WebApi.Common
             .MapFrom(src => src.Genre.Name));
 
             CreateMap<Genre, GenreQueryViewModel>();
-            CreateMap<Genre, CreateGenreViewModel>();
+            CreateMap<CreateGenreViewModel, Genre>();
             CreateMap<Genre, GenreDetailViewModel>();
         }
     }

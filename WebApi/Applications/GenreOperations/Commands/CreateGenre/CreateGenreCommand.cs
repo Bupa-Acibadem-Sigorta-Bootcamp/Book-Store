@@ -21,9 +21,9 @@ namespace WebApi.Applications.GenreOperations.Commands.CreateGenre
             var genres = _context.Genres.SingleOrDefault(x => x.Name == Model.Name);
             if (genres is not null)
                 throw new InvalidOperationException("Kitap Türü Zaten Mevcut!");
-            //genres = _mapper.Map<Genre>(Model);
-             genres = new Genre();
-             genres.Name = Model.Name;
+            genres = _mapper.Map<Genre>(Model);
+            //genres = new Genre();
+            //genres.Name = Model.Name;
             _context.Genres.Add(genres);
             _context.SaveChanges();
         }
