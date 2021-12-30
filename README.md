@@ -5,3 +5,4 @@ Eduflow + Patika.dev Bootcamp .Net Core
 #### Ödevler
   + Ders tekrarları yapıldı.
   + Ödevler yazıldı.
+  + Testler yazıldı.
