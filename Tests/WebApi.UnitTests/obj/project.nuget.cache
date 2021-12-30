@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "7E7g1DYjpX/clgygJ1hey+wDqj6GfhRAOjGwxTkZ+KcPDvwr8f6KcY2THSeuzi9ZZIxLfqjUXEoWciWjcqhOKA==",
+  "dgSpecHash": "uK5yKRdHch9XXkVhDWLVfutHU0wvicBcsWOIlRt31bgC2YI1RKOYtn9hkpqcEUtbzNXPtlOlC3nQwFvWPN2KXg==",
   "success": true,
   "projectFilePath": "C:\\Patika.dev Bupa Acibadem Sigorta Bootcamp\\Orta Seviye .Net Core Patikasi\\Book Store\\Tests\\WebApi.UnitTests\\WebApi.UnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\fluentassertions\\6.2.0\\fluentassertions.6.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.6\\microsoft.aspnetcore.authentication.jwtbearer.5.0.6.nupkg.sha512",

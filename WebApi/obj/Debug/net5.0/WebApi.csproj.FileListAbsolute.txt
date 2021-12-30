@@ -36,3 +36,10 @@ C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.dll
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\ref\WebApi.dll
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.pdb
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.csproj.AssemblyReference.cache
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\webapi\bin\Debug\net5.0\WebApi.deps.json
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\webapi\bin\Debug\net5.0\WebApi.runtimeconfig.json
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\webapi\bin\Debug\net5.0\WebApi.runtimeconfig.dev.json
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\webapi\bin\Debug\net5.0\ref\WebApi.dll
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\webapi\bin\Debug\net5.0\WebApi.pdb
+C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\webapi\obj\Debug\net5.0\WebApi.genruntimeconfig.cache
