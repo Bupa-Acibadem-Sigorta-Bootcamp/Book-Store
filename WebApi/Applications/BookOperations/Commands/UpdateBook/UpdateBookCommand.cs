@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 
 namespace WebApi.Applications.BookOperations.Commands.CreateBookCommand
 {
@@ -9,8 +10,8 @@ namespace WebApi.Applications.BookOperations.Commands.CreateBookCommand
         public int BookId { get; set; }
         public UpdateBookModel Model { get; set; }
         private const string Error = "Kitap Mevcut Değil, Güncellenemedi!";      
-        private readonly BookStoreDbContext _context;
-        public UpdateBookCommand(BookStoreDbContext context)
+        private readonly IBookStoreDbContext _context;
+        public UpdateBookCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

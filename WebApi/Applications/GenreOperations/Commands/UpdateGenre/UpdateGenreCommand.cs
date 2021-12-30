@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using AutoMapper;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.Entities;
 
 namespace WebApi.Applications.GenreOperations.Commands.UpdateGenre
@@ -10,11 +11,10 @@ namespace WebApi.Applications.GenreOperations.Commands.UpdateGenre
     {
         public int GenreId { get; set; }
         public UpdateGenreViewModel Model { get; set; }
-
-        private readonly BookStoreDbContext _context;
-        public UpdateGenreCommand(BookStoreDbContext context)
+        private readonly IBookStoreDbContext _context;
+        public UpdateGenreCommand(IBookStoreDbContext context)
         {
-            _context = context;            
+            _context = context;
         }
         public void Handle()
         {
@@ -25,7 +25,7 @@ namespace WebApi.Applications.GenreOperations.Commands.UpdateGenre
                 throw new InvalidOperationException("Aynı İsimli Kitap Türü Zaten Mevcut!");
             genres.Name = string.IsNullOrEmpty(Model.Name.Trim()) ? genres.Name : Model.Name;
             genres.IsActive = Model.IsActive;
-            _context.SaveChanges();            
+            _context.SaveChanges();
         }
     }
     public class UpdateGenreViewModel

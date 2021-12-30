@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.TokenOperations.Models;
 
 namespace WebApi.Applications.UserOperations.Commands.CreateToken
@@ -14,9 +15,9 @@ namespace WebApi.Applications.UserOperations.Commands.CreateToken
     {
         public CreateTokenViewModel Model { get; set; }
         private readonly IConfiguration _configuration;
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public CreateTokenCommand(BookStoreDbContext context, IMapper mapper, IConfiguration configuration)
+        public CreateTokenCommand(IBookStoreDbContext context, IMapper mapper, IConfiguration configuration)
         {
             _context = context;
             _mapper = mapper;

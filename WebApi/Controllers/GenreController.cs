@@ -8,17 +8,18 @@ using WebApi.Applications.GenreOperations.Commands.UpdateGenre;
 using WebApi.Applications.GenreOperations.Queries.GetGenreDetail;
 using WebApi.Applications.GenreOperations.Queries.GetGenres;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 
 namespace WebApi.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class GenreController : ControllerBase
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public GenreController(BookStoreDbContext context, IMapper mapper)
+        public GenreController(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

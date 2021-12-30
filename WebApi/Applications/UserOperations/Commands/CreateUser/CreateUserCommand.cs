@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.Entities;
 
 namespace WebApi.Applications.UserOperations.Commands.CreateUser
@@ -11,9 +12,9 @@ namespace WebApi.Applications.UserOperations.Commands.CreateUser
     public class CreateUserCommand
     {
         public CreateUserViewModel Model { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public CreateUserCommand(BookStoreDbContext context, IMapper mapper)
+        public CreateUserCommand(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

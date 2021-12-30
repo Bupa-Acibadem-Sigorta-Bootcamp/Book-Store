@@ -5,6 +5,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Common;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.Entities;
 
 namespace WebApi.Applications.BookOperations.Queries.GetBookDetailQuery
@@ -14,10 +15,10 @@ namespace WebApi.Applications.BookOperations.Queries.GetBookDetailQuery
     public class GetBookDetailQuery
     {
         public int BookId { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetBookDetailQuery(BookStoreDbContext context, IMapper mapper)
+        public GetBookDetailQuery(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -29,7 +30,6 @@ namespace WebApi.Applications.BookOperations.Queries.GetBookDetailQuery
                 throw new InvalidOperationException("Kitap Bulunamadı!");
             BooksDetailViewModel booksDetailView = _mapper.Map<BooksDetailViewModel>(book);
             return booksDetailView;
-            throw new InvalidOperationException("Kitap Listelendi.");
         }
     }
     public class BooksDetailViewModel

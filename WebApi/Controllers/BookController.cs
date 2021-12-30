@@ -11,17 +11,18 @@ using WebApi.Applications.BookOperations.Commands.DeleteBook;
 using WebApi.Applications.BookOperations.Queries.GetBookDetailQuery;
 using WebApi.Applications.BookOperations.Queries.GetBooks;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 
 namespace WebApi.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [ApiController]
     [Route("[controller]s")]
     public class BookController : ControllerBase
     {
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public BookController(BookStoreDbContext context, IMapper mapper)
+        public BookController(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

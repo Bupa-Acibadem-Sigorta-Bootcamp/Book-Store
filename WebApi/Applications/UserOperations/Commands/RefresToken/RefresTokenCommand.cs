@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.TokenOperations.Models;
 
 namespace WebApi.Applications.UserOperations.Commands.RefresToken
@@ -13,9 +14,9 @@ namespace WebApi.Applications.UserOperations.Commands.RefresToken
     {
         public string RefresToken { get; set; }
         private readonly IConfiguration _configuration;
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
 
-        public RefresTokenCommand(BookStoreDbContext context, IConfiguration configuration)
+        public RefresTokenCommand(IBookStoreDbContext context, IConfiguration configuration)
         {
             _context = context;
 

@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 
 namespace WebApi.Applications.GenreOperations.Queries.GetGenreDetail
 {
     public class GetGenreDetailQuery
     {
         public int GenreId { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public GetGenreDetailQuery(BookStoreDbContext context, IMapper mapper)
+        public GetGenreDetailQuery(IBookStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

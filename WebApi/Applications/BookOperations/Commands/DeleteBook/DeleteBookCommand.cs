@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 
 namespace WebApi.Applications.BookOperations.Commands.DeleteBook
 {
@@ -8,8 +9,8 @@ namespace WebApi.Applications.BookOperations.Commands.DeleteBook
     {
         public int BookId { get; set; }
         private const string Error = "Kitap Mevcut Değil, Silinemedi!";        
-        private readonly BookStoreDbContext _context;
-        public DeleteBookCommand(BookStoreDbContext context)
+        private readonly IBookStoreDbContext _context;
+        public DeleteBookCommand(IBookStoreDbContext context)
         {
             _context = context;
         }

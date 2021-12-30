@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using AutoMapper;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.Entities;
 
 namespace WebApi.Applications.BookOperations.Commands.CreateBook
@@ -10,11 +11,11 @@ namespace WebApi.Applications.BookOperations.Commands.CreateBook
     {
         private const string Error = "Kitap Zaten Mevcut!";        
         public CreateBookCommandModel Model { get; set; }
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public CreateBookCommand(BookStoreDbContext context, IMapper mapper)
+        public CreateBookCommand(IBookStoreDbContext context, IMapper mapper)
         {
-            _context = context;
+            _context = context; 
             _mapper = mapper;
         }
         public void Handle()

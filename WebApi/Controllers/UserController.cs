@@ -9,6 +9,7 @@ using WebApi.Applications.UserOperations.Commands.CreateToken;
 using WebApi.Applications.UserOperations.Commands.CreateUser;
 using WebApi.Applications.UserOperations.Commands.RefresToken;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.TokenOperations.Models;
 
 
@@ -20,9 +21,9 @@ namespace WebApi.Controllers
     public class UserController : ControllerBase
     {
         private readonly IConfiguration _configuration;
-        private readonly BookStoreDbContext _context;
+        private readonly IBookStoreDbContext _context;
         private readonly IMapper _mapper;
-        public UserController(BookStoreDbContext context, IMapper mapper, IConfiguration configuration)
+        public UserController(IBookStoreDbContext context, IMapper mapper, IConfiguration configuration)
         {
             _context = context;
             _mapper = mapper;
@@ -48,10 +49,10 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("refreshToken")]
-        public ActionResult<Token> RefresToken([FromQuery] string token)
+        public ActionResult<Token> RefresToken([FromQuery] string refreshtoken)
         {
             RefresTokenCommand create = new RefresTokenCommand(_context, _configuration);
-            create.RefresToken = token;
+            create.RefresToken = refreshtoken;
             var resultRefresToken = create.Handle();
             return resultRefresToken;
         }

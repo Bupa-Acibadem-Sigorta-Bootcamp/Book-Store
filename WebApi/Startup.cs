@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using WebApi.DataBaseOpeOperations;
+using WebApi.DataBaseOperations;
 using WebApi.Middlewares;
 using WebApi.Services;
 
@@ -62,6 +63,10 @@ namespace WebApi
             services.AddSingleton<ILoggerService, ConsoleLogger>();
             //TODO : Sadece burada log yerini değiştirdiğimizde sistem değişiyor Dependency İnjection yöntemi hayat kurtarır Sol(i)d yeni sistem geldiğinde mevcut yapı bozulamaz der.
             //services.AddSingleton<ILoggerService, DbLogger>(); 
+
+            //TODO : Veri tabanını inject ettik ve bağımlılığı çözdük.
+            services.AddScoped<IBookStoreDbContext>(provider => provider.GetService<BookStoreDbContext>());
+            //TODO : AddScoped : Request gelince instance üretilir. response dönünce işlem sonlanır.
 
         }
 
