@@ -1,5 +1,6 @@
 using System;
 using AutoMapper;
+using WebApi.Applications.AuthorOperations.Commands.CreateAuthor;
 using WebApi.Applications.BookOperations.Commands.CreateBook;
 using WebApi.Applications.BookOperations.Commands.CreateBookCommand;
 using WebApi.Applications.BookOperations.Queries.GetBookDetailQuery;
@@ -32,6 +33,8 @@ namespace WebApi.Common
 
             CreateMap<CreateUserViewModel, User>();
             CreateMap<CreateTokenViewModel, User>();
+
+            CreateMap<CreateAuthorCommand.CreateAuthorCommandViewModel, Author>();
         }
     }
 }

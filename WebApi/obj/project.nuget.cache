@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oYp14/2V7hg6EN9deF9GjP9m9uBUwNjVlk6qXK0apQ5yZrz3o6QGDPcj+IDmwdsDe3oAZ047dl1WWwxf9bfVqQ==",
+  "dgSpecHash": "iAPUH8J5b2geToTpsiGpeoTXrEf0XCf1f6fVEOaRyeA7uch+8FnNvSAtY0QTVOvYDXYoZP3L/HGycCC5nVT0xQ==",
   "success": true,
-  "projectFilePath": "C:\\Patika.dev Bupa Acibadem Sigorta Bootcamp\\Orta Seviye .Net Core Patikasi\\Book Store\\WebApi\\WebApi.csproj",
+  "projectFilePath": "C:\\Patika.dev Bupa Acibadem Sigorta Bootcamp\\Orta Seviye .Net Core Patikasi\\Book Store\\webapi\\WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
