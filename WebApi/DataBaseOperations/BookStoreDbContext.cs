@@ -15,5 +15,6 @@ namespace WebApi.DataBaseOpeOperations
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Author> Authors { get; set; }
     }
 }

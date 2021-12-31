@@ -67,6 +67,29 @@ namespace WebApi.DataBaseOpeOperations
                     }
                 );
                 #endregion
+                #region Author
+                context.Authors.AddRange(
+
+                    new Author
+                    {
+                        Name = "Yahya",
+                        SurName = "Erdoğan",
+                        DateOfBirth = new DateTime(2021,12,31)
+                    },
+                    new Author
+                    {
+                        Name = "Cemil",
+                        SurName = "Meriç",
+                        DateOfBirth = new DateTime(1992, 01, 01)
+                    },
+                    new Author
+                    {
+                        Name = "Doğan",
+                        SurName = "Cüceloğlu",
+                        DateOfBirth = new DateTime(1993, 01, 01)
+                    }
+                );
+                #endregion
                 context.SaveChanges();
             }
         }

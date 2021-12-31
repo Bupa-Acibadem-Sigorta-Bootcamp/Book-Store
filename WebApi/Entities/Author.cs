@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace WebApi.Entities
 {
-    public class User
+    public class Author
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string RefresToken { get; set; }
-        public DateTime? RefreshTokenExpireDate { get; set; }
+        public string SurName { get; set; }
+        public DateTime DateOfBirth { get; set; }
     }
 }
