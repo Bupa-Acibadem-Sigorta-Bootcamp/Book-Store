@@ -24,7 +24,7 @@ namespace WebApi.Applications.AuthorOperations.Commands.UpdateAuthor
         {
             var authors = _context.Authors.SingleOrDefault(x => x.Id == AuthorId);
             if (authors is null)
-                throw new InvalidOperationException("Yazar Bulunamadı!");
+                throw new InvalidOperationException("Güncellenecek Yazar Bulunamadı!");
 
             if (_context.Authors.Any(x => x.Name.ToLower() == Model.Name.ToLower()
                 && x.SurName.ToLower() == Model.SurName.ToLower() && x.Id != AuthorId))

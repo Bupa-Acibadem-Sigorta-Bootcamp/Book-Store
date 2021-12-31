@@ -8,6 +8,8 @@ using FluentValidation;
 using WebApi.Applications.AuthorOperations.Commands.CreateAuthor;
 using WebApi.Applications.AuthorOperations.Commands.DeleteAuthor;
 using WebApi.Applications.AuthorOperations.Commands.UpdateAuthor;
+using WebApi.Applications.AuthorOperations.Queries.GetAuthorDetail;
+using WebApi.Applications.AuthorOperations.Queries.GetAuthors;
 using WebApi.DataBaseOperations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -28,15 +30,24 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult GetAuthors()
         {
-            return new string[] { "value1", "value2" };
+
+            GetAuthorsQuery query = new GetAuthorsQuery(_context, _mapper);
+            var result = query.Handle();
+            return Ok(result);
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult GetById(int id)
         {
-            return "value";
+            GetAuthorDetailQueryViewModel result;
+            GetAuthorDetailQuery getAuthorDetailQuery = new GetAuthorDetailQuery(_context, _mapper);
+            getAuthorDetailQuery.AuthorId = id;
+            GetAuthorDetailQueryValidator validator = new GetAuthorDetailQueryValidator();
+            validator.ValidateAndThrow(getAuthorDetailQuery);
+            result = getAuthorDetailQuery.Handle();
+            return Ok(result);
         }
 
         [HttpPost]
