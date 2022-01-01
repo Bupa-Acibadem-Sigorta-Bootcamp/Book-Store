@@ -22,8 +22,9 @@ namespace WebApi.Applications.BookOperations.Queries.GetBooks
         public List<BooksViewModel> Handle()
         {
             var bookList = _context.Books.Include(x => x.Genre).OrderBy(b => b.Id).ToList<Book>();
-            List<BooksViewModel> vm = _mapper.Map<List<BooksViewModel>>(bookList);
-            return vm;
+            bookList = _context.Books.Include(x => x.Author).OrderBy(b => b.Id).ToList<Book>();
+            List<BooksViewModel> booksViewModel = _mapper.Map<List<BooksViewModel>>(bookList);
+            return booksViewModel;
         }
     }
     public class BooksViewModel

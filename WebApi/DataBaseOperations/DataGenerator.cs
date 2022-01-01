@@ -23,8 +23,9 @@ namespace WebApi.DataBaseOpeOperations
                 context.Books.AddRange(
                new Book
                {
-                   //Id = 1,
+                   //Id = 1, TODO : Otoincramend yaptığımız için ıd dinamik geliyor.
                    GenreId = 1,
+                   AuthorId = 1,
                    Title = "Mahmure",
                    PageCount = 304,
                    PublishDate = new DateTime(2021, 05, 17)
@@ -33,6 +34,7 @@ namespace WebApi.DataBaseOpeOperations
                {
                    //Id = 2,
                    GenreId = 2,
+                   AuthorId = 2,
                    Title = "Beyin",
                    PageCount = 205,
                    PublishDate = new DateTime(2021, 05, 17)
@@ -41,6 +43,7 @@ namespace WebApi.DataBaseOpeOperations
                {
                    //Id = 3,
                    GenreId = 3,
+                   AuthorId = 3,
                    Title = "Yabani Monolyalar",
                    PageCount = 205,
                    PublishDate = new DateTime(2018, 05, 17)
@@ -53,17 +56,14 @@ namespace WebApi.DataBaseOpeOperations
                     new Genre
                     {
                         Name = "Sözlük"
-
                     },
                     new Genre
                     {
                         Name = "Roman"
-
                     },
                     new Genre
                     {
                         Name = "Kimya"
-
                     }
                 );
                 #endregion

@@ -26,6 +26,7 @@ namespace WebApi.Applications.BookOperations.Queries.GetBookDetailQuery
         public BooksDetailViewModel Handle()
         {
             var book = _context.Books.Include(x => x.Genre).SingleOrDefault(b => b.Id == BookId);
+            book = _context.Books.Include(x => x.Author).SingleOrDefault(b => b.Id == BookId);
             if (book is null)
                 throw new InvalidOperationException("Kitap Bulunamadı!");
             BooksDetailViewModel booksDetailView = _mapper.Map<BooksDetailViewModel>(book);

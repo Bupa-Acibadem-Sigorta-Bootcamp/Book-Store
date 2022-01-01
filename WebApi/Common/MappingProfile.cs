@@ -22,17 +22,22 @@ namespace WebApi.Common
         public MappingProfile()
         {
             CreateMap<CreateBookCommandModel, Book>(); //Add metodu için source target
+
             CreateMap<Book, BooksDetailViewModel>()
-            .ForMember(desc => desc.Genre, opt => opt
-            .MapFrom(src => src.Genre.Name));
+                .ForMember(dest => dest.Genre, opt => opt
+                    .MapFrom(src => src.Genre.Name))
+                .ForMember(dest => dest.Author, opt => opt
+                    .MapFrom(src => src.Author.Name + " " + src.Author.SurName));
 
             CreateMap<Book, BooksViewModel>()
-            .ForMember(desc => desc.Genre, opt => opt
-            .MapFrom(src => src.Genre.Name));
+                .ForMember(desc => desc.Genre, opt => opt
+                    .MapFrom(src => src.Genre.Name))
+                .ForMember(dest => dest.Author, opt => opt
+                    .MapFrom(src => src.Author.Name + " " + src.Author.SurName));
 
-            CreateMap<Genre, GenreQueryViewModel>();
             CreateMap<CreateGenreViewModel, Genre>();
-            CreateMap<Genre, GenreDetailViewModel>();
+            CreateMap<Genre, GenreQueryViewModel>();
+            CreateMap<Genre, GenreDetailViewModel>();   
 
             CreateMap<CreateUserViewModel, User>();
             CreateMap<CreateTokenViewModel, User>();
