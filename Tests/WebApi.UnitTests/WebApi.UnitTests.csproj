@@ -28,11 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Applications\AuthorOperations\Commands\CreateAuthor\" />
-    <Folder Include="Applications\AuthorOperations\Commands\DeleteAuthor\" />
-    <Folder Include="Applications\AuthorOperations\Commands\UpdateAuthor\" />
-    <Folder Include="Applications\AuthorOperations\Queries\GetAuthorDetail\" />
-    <Folder Include="Applications\AuthorOperations\Queries\GetAuthors\" />
     <Folder Include="Applications\GenreOperations\Commands\DeleteGenre\" />
     <Folder Include="Applications\GenreOperations\Commands\UpdateGenre\" />
     <Folder Include="Applications\GenreOperations\Commands\CreateGenre\" />

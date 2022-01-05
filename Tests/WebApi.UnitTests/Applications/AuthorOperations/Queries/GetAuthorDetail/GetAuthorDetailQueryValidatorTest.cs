@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebApi.UnitTests.Applications.BookOperations.Queries.GetBookDetail
+namespace WebApi.UnitTests.Applications.AuthorOperations.Queries.GetAuthorDetail
 {
-    class GetBookDetailQuery
+    public class GetAuthorDetailQueryValidatorTest
     {
     }
 }
