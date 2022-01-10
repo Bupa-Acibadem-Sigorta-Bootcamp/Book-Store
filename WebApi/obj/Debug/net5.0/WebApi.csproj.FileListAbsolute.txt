@@ -22,7 +22,6 @@ C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.csproj.AssemblyReference.cache
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.AssemblyInfoInputs.cache
 C:\Patika.dev Bupa Acibadem Sigorta Bootcamp\Orta Seviye .Net Core Patikasi\Book Store\WebApi\obj\Debug\net5.0\WebApi.AssemblyInfo.cs

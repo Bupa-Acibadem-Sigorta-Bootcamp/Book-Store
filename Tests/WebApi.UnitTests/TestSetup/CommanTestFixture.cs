@@ -13,7 +13,7 @@ namespace WebApi.UnitTests.TestSetup
     public class CommanTestFixture
     {
         public BookStoreDbContext context { get; set; }
-        public IMapper Mapper { get; set; }
+        public IMapper mapper { get; set; }
 
         public CommanTestFixture()
         {
@@ -24,7 +24,7 @@ namespace WebApi.UnitTests.TestSetup
             context.AddBooks();
             context.AddGenres();
 
-            Mapper = new MapperConfiguration(configure =>
+            mapper = new MapperConfiguration(configure =>
                 { configure.AddProfile<MappingProfile>(); }).CreateMapper();
         }
     }

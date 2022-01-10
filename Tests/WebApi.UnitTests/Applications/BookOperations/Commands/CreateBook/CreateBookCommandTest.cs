@@ -22,7 +22,7 @@ namespace WebApi.UnitTests.Applications.BookOperations.Commands.CreateBook
         public CreateBookCommandTest(CommanTestFixture commanTestFixture)
         {
             _context = commanTestFixture.context;
-            _mapper = commanTestFixture.Mapper;
+            _mapper = commanTestFixture.mapper;
         }
 
         [Fact]

@@ -21,10 +21,10 @@ namespace WebApi.UnitTests.Applications.GenreOperations.Commands.CreateGenre
         public CreateGenreCommandTest(CommanTestFixture commanTestFixture)
         {
             _context = commanTestFixture.context;
-            _mapper = commanTestFixture.Mapper;
+            _mapper = commanTestFixture.mapper;
         }
         [Fact]
-        public void WhenTryingToAddaGenreWiththeSameName_inValidation_ShouldbeReturnanErrorMessage()
+        public void WhenTryingToAddAGenreWithTheSameName_InValidation_ShouldBeReturnAnErrorMessage()
         {
             var genre = new Genre()
             {
