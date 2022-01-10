@@ -27,12 +27,4 @@
     <ProjectReference Include="..\..\WebApi\WebApi.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Applications\GenreOperations\Commands\DeleteGenre\" />
-    <Folder Include="Applications\GenreOperations\Commands\UpdateGenre\" />
-    <Folder Include="Applications\GenreOperations\Commands\CreateGenre\" />
-    <Folder Include="Applications\GenreOperations\Queries\GetBooks\" />
-    <Folder Include="Applications\GenreOperations\Queries\GetBookDetail\" />
-  </ItemGroup>
-
 </Project>

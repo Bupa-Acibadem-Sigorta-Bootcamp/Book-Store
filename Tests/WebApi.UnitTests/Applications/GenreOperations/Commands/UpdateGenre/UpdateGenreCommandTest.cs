@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebApi.UnitTests.Applications.BookOperations.Commands.DeleteBook
+namespace WebApi.UnitTests.Applications.GenreOperations.Commands.UpdateGenre
 {
-    public class DeleteBookCommandTest
+    public class UpdateGenreCommandTest
     {
     }
 }

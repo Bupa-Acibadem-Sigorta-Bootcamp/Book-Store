@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApi.UnitTests.Applications.BookOperations.Queries.GetBookDetail
 {
-    class GetBookDetailQueryTest
+    public class GetBookDetailQueryTest
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApi.UnitTests.Applications.BookOperations.Commands.UpdateBook
 {
-    class UpdateBookCommandValidatorTest
+    public class UpdateBookCommandValidatorTest
     {
     }
 }

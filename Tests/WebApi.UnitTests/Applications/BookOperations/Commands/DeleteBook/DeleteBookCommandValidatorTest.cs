@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApi.UnitTests.Applications.BookOperations.Commands.DeleteBook
 {
-    class DeleteBookCommandValidatorTest
+    public class DeleteBookCommandValidatorTest
     {
     }
 }
