@@ -2,6 +2,7 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=bf637ef3_002Dc7b8_002D4548_002D867b_002De00ecdfb8cf2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreateBookCommandTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::5025EEBD-C0A2-4B23-AE9D-00E0137794A9::net5.0::WebApi.UnitTests.Applications.BookOperations.Commands.CreateBook.CreateBookCommandTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5025EEBD-C0A2-4B23-AE9D-00E0137794A9::net5.0::WebApi.UnitTests.Applications.GenreOperations.Commands.CreateGenre.CreateGenreCommandTest.WhenTryingToAddaGenreWiththeSameName_inValidation_ShouldbeReturnanErrorMessage&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
