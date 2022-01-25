@@ -3,6 +3,7 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::5025EEBD-C0A2-4B23-AE9D-00E0137794A9::net5.0::WebApi.UnitTests.Applications.BookOperations.Commands.CreateBook.CreateBookCommandTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::5025EEBD-C0A2-4B23-AE9D-00E0137794A9::net5.0::WebApi.UnitTests.Applications.GenreOperations.Commands.CreateGenre.CreateGenreCommandTest.WhenTryingToAddaGenreWiththeSameName_inValidation_ShouldbeReturnanErrorMessage&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5025EEBD-C0A2-4B23-AE9D-00E0137794A9::net5.0::WebApi.UnitTests.Applications.BookOperations.Commands.DeleteBook.DeleteBookCommandTest.WhenDataisEnteredBook_DoesNotExist_CouldNotDeleteThrowError&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
